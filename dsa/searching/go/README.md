@@ -2,4 +2,4 @@
 
 ## Reference
 
-https://github.com/TheAlgorithms/Go
+https://github.com/TheAlgorithms/Go/tree/master/search
