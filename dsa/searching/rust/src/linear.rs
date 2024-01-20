@@ -1,4 +1,4 @@
-fn search(source: &[i32], value: i32) -> Option<usize> {
+pub fn search(source: &[i32], value: i32) -> Option<usize> {
     for i in 0..source.len() {
         if source[i] == value {
             return Some(i);
