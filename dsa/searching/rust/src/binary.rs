@@ -1,10 +1,6 @@
 pub fn search(src: &[i32], value: i32) -> Option<usize> {
-    let len = src.len();
-    if len == 0 {
-        return None;
-    }
     let mut start = 0;
-    let mut end = len;
+    let mut end = src.len();
     while start < end {
         let mid = start + (end - start) / 2;
         let ivalue = src[mid];
@@ -23,6 +19,11 @@ pub fn search(src: &[i32], value: i32) -> Option<usize> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn search_empty_src() {
+        assert_eq!(search(&[], 1), None);
+    }
 
     #[test]
     fn search_int_right() {
