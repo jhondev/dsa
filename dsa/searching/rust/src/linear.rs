@@ -1,6 +1,7 @@
-pub fn search(source: &[i32], value: i32) -> Option<usize> {
-    for i in 0..source.len() {
-        if source[i] == value {
+#[allow(clippy::manual_find)]
+pub fn search<T: PartialOrd + Copy>(source: &[T], value: T) -> Option<usize> {
+    for (i, &num) in source.iter().enumerate() {
+        if num == value {
             return Some(i);
         }
     }
