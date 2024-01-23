@@ -1,5 +1,6 @@
 pub mod binary;
 pub mod binary_recursive;
+pub mod crystal_ball;
 pub mod linear;
 
 // pub fn add(left: usize, right: usize) -> usize {
