@@ -1,13 +1,12 @@
-pub fn search(src: &[i32], value: i32) -> Option<usize> {
+pub fn search<T: PartialOrd + Copy>(src: &[T], value: T) -> Option<usize> {
     let mut start = 0;
     let mut end = src.len();
     while start < end {
         let mid = start + (end - start) / 2;
-        let ivalue = src[mid];
-        if ivalue == value {
+        if src[mid] == value {
             return Some(mid);
         }
-        if ivalue < value {
+        if src[mid] < value {
             start = mid + 1;
         } else {
             end = mid;
