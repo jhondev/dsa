@@ -1,4 +1,4 @@
-pub fn sort(src: &mut [i32]) {
+pub fn sort<T: PartialOrd>(src: &mut [T]) {
     if src.is_empty() {
         return;
     }
