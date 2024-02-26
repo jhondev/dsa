@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"slices"
 )
 
 func intersection(a, b []int) []int {
@@ -20,11 +20,12 @@ func intersection(a, b []int) []int {
 		} else {
 			rep = vb
 		}
-		for i := 0; i < rep; i++ {
+		for range rep {
 			total = append(total, k)
 		}
 	}
 
+	slices.Sort(total)
 	return total
 }
 
@@ -39,16 +40,4 @@ func summary(s []int) map[int]int {
 		}
 	}
 	return m
-}
-
-func main() {
-	a := []int{23, 3, 1, 2}
-	b := []int{6, 2, 4, 23}
-	fmt.Printf("%v\n", intersection(a, b))
-	// output: [2, 23]
-
-	a = []int{1, 1, 1}
-	b = []int{1, 1, 1, 1}
-	fmt.Printf("%v\n", intersection(a, b))
-	// output: [1, 1, 1]
 }
