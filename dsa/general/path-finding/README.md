@@ -1,1 +1,1 @@
-# MazeResolver
+# Maze Resolver
